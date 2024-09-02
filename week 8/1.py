@@ -15,7 +15,6 @@ print(text.index("s"))
 
 
 """
-
 Method	Description
 capitalize()	Converts the first character to upper case
 count()	Returns the number of times a specified value occurs in a string
