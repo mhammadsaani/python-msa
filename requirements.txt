@@ -1,1 +1,1 @@
-python
+pythonannotated-types==0.7.0
