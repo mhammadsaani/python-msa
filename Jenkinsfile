@@ -1,25 +1,25 @@
-pipeline{
+pipeline {
     agent any
     environment {
-        SERVER_CRED = credentials('cred')
+        SERVER_CRED = credentials('cred')  // Bind credentials to this environment variable
     }
-    stages{
-        parallel{
+    stages {
+        parallel {
             stage("username") {
-            steps {
-                sh " echo 'username is ${SERVER_CRED_USR}' "
-            }
+                steps {
+                    sh "echo 'Username is ${SERVER_CRED_USR}'"
+                }
             }
 
-            stage("password"){
-                steps{
-                    sh "echo 'Password is ${SERVER_CRED_PAS}'"
+            stage("password") {
+                steps {
+                    sh "echo 'Password is ${SERVER_CRED_PSW}'"
                 }
             }
         }
 
-        stage("Deploy"){
-            steps{
+        stage("Deploy") {
+            steps {
                 sh "echo 'Deployed'"
             }
         }
