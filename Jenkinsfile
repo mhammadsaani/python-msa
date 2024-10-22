@@ -1,19 +1,20 @@
 pipeline{
     agent any
     environment {
-        USERNAME = "Hammad"
-        PASSWORD = "Test123"
+        SERVER_CRED = credentials('cred')
     }
     stages{
-        stage("username") {
-        steps {
-            sh " echo 'username is ${USERNAME}' "
-        }
-        }
+        parallel{
+            stage("username") {
+            steps {
+                sh " echo 'username is ${SERVER_CRED_USR}' "
+            }
+            }
 
-        stage("password"){
-            steps{
-                sh "echo 'Password is ${PASSWORD}'"
+            stage("password"){
+                steps{
+                    sh "echo 'Password is ${SERVER_CRED_PAS}'"
+                }
             }
         }
 
