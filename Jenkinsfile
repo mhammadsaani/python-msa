@@ -12,5 +12,11 @@ pipeline{
                 sh "echo 'Hello'"
             }
         }
+
+        stage("Deploy"){
+            steps{
+                sh "echo 'Deployed'"
+            }
+        }
     }
 }
