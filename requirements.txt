@@ -1,1 +1,1 @@
-pythonannotated-types==0.7.0
+nothing_here
