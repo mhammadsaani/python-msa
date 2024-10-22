@@ -5,17 +5,18 @@ pipeline{
     }
     stages{
         stage("Parallel"){
-stage("username") {
-        steps {
-            sh " echo 'username is ${SERVER_CRED_USR}' "
-        }
-        }
-
-        stage("password"){
-            steps{
-                sh "echo 'Password is ${SERVER_CRED_PAS}'"
-            }
-        }
+            parallel{
+                stage("username") {
+                    steps {
+                        sh " echo 'username is ${SERVER_CRED_USR}' "
+                    }
+                }
+                stage("password"){
+                    steps{
+                        sh "echo 'Password is ${SERVER_CRED_PAS}'"
+                    }
+                }
+            }   
         }
         
 
