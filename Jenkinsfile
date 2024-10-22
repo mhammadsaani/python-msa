@@ -13,7 +13,7 @@ pipeline{
                 }
                 stage("password"){
                     steps{
-                        sh "echo 'Password is ${SERVER_CRED_PAS}'"
+                        sh "echo 'Password is ${SERVER_CRED_PSW}'"
                     }
                 }
             }   
