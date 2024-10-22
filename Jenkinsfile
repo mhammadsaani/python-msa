@@ -21,6 +21,10 @@ pipeline{
         
 
         stage("Deploy"){
+            input{
+                message "Should it be deployed?"
+                ok "Yes, deploy"
+            }
             steps{
                 sh "echo 'Deployed'"
             }
