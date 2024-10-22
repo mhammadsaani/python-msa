@@ -1,15 +1,19 @@
 pipeline{
     agent any
+    environment {
+        USERNAME = "Hammad"
+        PASSWORD = "Test123"
+    }
     stages{
-        stage("Setup") {
+        stage("username") {
         steps {
-            sh " echo 'Setup Done' "
+            sh " echo 'username is ${USERNAME} "
         }
         }
 
-        stage("Test"){
+        stage("password"){
             steps{
-                sh "echo 'Hello'"
+                sh "echo 'Password is ${PASSWORD}'"
             }
         }
 
